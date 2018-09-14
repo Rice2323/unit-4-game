@@ -8,27 +8,27 @@ var amberNum;
 var rubyNum;
 
 
-var wins = document.getElementById("wins");
-var losses = document.getElementById("losses");
-var goal = document.getElementById("goal");
-var score = document.getElementById("score");
-var ruby = document.getElementById("ruby");
-var diamond = document.getElementById("diamond");
-var amber = document.getElementById("amber");
-var emerald = document.getElementById("emerald");
+var wins = $("#wins");
+var losses = $("#losses");
+var goal = $("#goal");
+var score = $("#score");
+var ruby = $("#ruby");
+var diamond = $("#diamond");
+var amber = $("#amber");
+var emerald = $("#emerald");
 
 function showStats() {
-    wins.textContent = "Wins: " + totalWins;
-    losses.textContent = "Losses: " + totalLosses;
-    goal.textContent = "Goal: " + goalNum;
-    score.textContent = "You have: " + scoreNum;
+    wins.text("Wins: " + totalWins);
+    losses.text( "Losses: " + totalLosses);
+    goal.text( "Goal: " + goalNum);
+    score.text("You have: " + scoreNum);
 
     if (scoreNum > goalNum) {
         totalLosses++;
         scoreNum = 0;
         goalNum = "You LOSE!!";
-        score.textContent = "You have: " + scoreNum;
-        goal.textContent = "Goal: " + goalNum;
+        score.text( "You have: " + scoreNum);
+        goal.text("Goal: " + goalNum);
         runGame();
 
 
@@ -38,8 +38,8 @@ function showStats() {
         totalWins++;
         scoreNum = 0;
         goalNum = "WINNER!!!";
-        goal.textContent = "Goal: " + goalNum;
-        score.textContent = "You have: " + scoreNum;
+        goal.text("Goal: " + goalNum);
+        score.text("You have: " + scoreNum);
         runGame();
     }
     
@@ -60,22 +60,22 @@ function startGame() {
 console.log(rubyNum);
 function runGame() {
     startGame();
-        ruby.onclick = function () {
+        ruby.click( function () {
             scoreNum = scoreNum + rubyNum;
             showStats();
-        }
-        diamond.onclick = function () {
+        });
+        diamond.click ( function () {
             scoreNum = scoreNum + diamondNum;
             showStats();
-        }
-        amber.onclick = function () {
+        });
+        amber.click (function () {
             scoreNum = scoreNum + amberNum;
             showStats();
-        }
-        emerald.onclick = function () {
+        });
+        emerald.click( function () {
             scoreNum = scoreNum + emeraldNum;
             showStats();
-        }
+        });
 
     }
 
